@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static`,
+        path: `${__dirname}/static/images`,
         name: `images`,
       },
     },{
@@ -54,7 +54,7 @@ module.exports = {
             options: {
               // [Optional] The root of "media_folder" in your config.yml
               // Defaults to "static"
-              // staticFolderName: 'static',
+              staticFolderName: 'static/images',
               // [Optional] Include the following fields, use dot notation for nested fields
               // All fields are included by default
               // include: ['featured'],
