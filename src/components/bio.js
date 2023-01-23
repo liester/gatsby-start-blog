@@ -11,18 +11,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
-    query BioQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-          social {
-            twitter
-          }
-        }
-      }
+    query Query {
        allMarkdownRemark {
         nodes {
           frontmatter {
@@ -39,9 +28,7 @@ const Bio = () => {
 
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
-    const image = data.allMarkdownRemark?.nodes[2]?.frontmatter.photo.childImageSharp.gatsbyImageData.images.sources[0].srcSet;
+    const image = data.allMarkdownRemark?.nodes[0]?.frontmatter.photo.childImageSharp.gatsbyImageData.images.sources[0].srcSet;
     console.log({data})
   console.log({image})
   return (
