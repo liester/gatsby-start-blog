@@ -23,8 +23,20 @@ const Bio = () => {
           }
         }
       }
+       allMarkdownRemark {
+        nodes {
+          frontmatter {
+            photo {
+              childImageSharp {
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
+              }
+            }
+          }
+        }
+      }
     }
   `)
+
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
